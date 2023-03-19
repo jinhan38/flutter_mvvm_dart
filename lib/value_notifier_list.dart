@@ -22,4 +22,8 @@ class ValueNotifierList<T> extends ValueNotifier<List<T>> {
   void removeLast() {
     value = List.from(value)..removeLast();
   }
+
+  void clear() {
+    value = List.from(value)..clear();
+  }
 }

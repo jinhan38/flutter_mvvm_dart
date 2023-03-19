@@ -12,13 +12,6 @@ class _NotifierScreenState extends State<NotifierScreen> {
   final NotifierViewModel _vm = NotifierViewModel();
 
   @override
-  void dispose() {
-    /// 메모리 제거
-    _vm.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,7 +27,7 @@ class _NotifierScreenState extends State<NotifierScreen> {
               valueListenable: _vm.countNotifier,
               builder: (context, value, child) {
                 return Text(
-                  "countNotifier : ${_vm.countNotifier.value}",
+                  "countNotifier : $value",
                   style: const TextStyle(fontSize: 22),
                 );
               },

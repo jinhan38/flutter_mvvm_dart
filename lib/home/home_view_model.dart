@@ -2,16 +2,15 @@ import 'package:flutter/cupertino.dart';
 
 class HomeViewModel with ChangeNotifier {
   int count = 0;
+  List<String> st = [];
 
   void countUp() {
     count++;
     notifyListeners();
   }
 
-  List<String> st = [];
-
   void addSt() {
-    st = [...st, DateTime.now().toString()];
+    st.add(DateTime.now().toString());
     notifyListeners();
   }
 }
