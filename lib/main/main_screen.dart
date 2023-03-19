@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_dart/home/home_screen.dart';
+import 'package:flutter_mvvm_dart/notifier/notifier_view_model.dart';
 
 import '../notifier/notifier_screen.dart';
 import '../second/second_screen.dart';
@@ -25,7 +26,15 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _button("HomeScreen", const HomeScreen()),
-            _button("NotifierScreen", const NotifierScreen()),
+            ValueListenableBuilder(
+              valueListenable: NotifierViewModel().countNotifier,
+              builder: (context, value, child) {
+                return _button(
+                  "NotifierScreen countNotifier $value",
+                  const NotifierScreen(),
+                );
+              },
+            ),
             _button("SecondScreen", SecondScreen()),
           ],
         ),
