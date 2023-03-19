@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_dart/notifier/notifier_view_model.dart';
 
-import '../second/second_screen.dart';
-
 class NotifierScreen extends StatefulWidget {
   const NotifierScreen({Key? key}) : super(key: key);
 
@@ -69,7 +67,8 @@ class _NotifierScreenState extends State<NotifierScreen> {
             ElevatedButton(
               onPressed: () {
                 if (_vm.stList.value.isEmpty) return;
-                _vm.stList.value = List.from(_vm.stList.value)..removeAt(0);
+                _vm.stList.removeAt(0);
+                // _vm.stList.removeLast();
               },
               child: const Text("ValueNotifierList remove"),
             ),
