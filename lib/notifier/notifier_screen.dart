@@ -15,7 +15,7 @@ class _NotifierScreenState extends State<NotifierScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter MVVM only Dart"),
+        title: const Text("NotifierScreen"),
       ),
       body: SizedBox(
         width: double.infinity,
